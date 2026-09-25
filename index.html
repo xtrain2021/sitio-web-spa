@@ -1,204 +1,567 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcella Beauty Nails - Spa de Uñas y Belleza</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ================= SEO LOCAL + OPEN GRAPH ================= -->
+  <title>Marcella Beauty Nails | Spa de uñas y belleza en Medellín</title>
+  <meta name="description" content="Spa de uñas y belleza en el barrio La Floresta, Medellín. Manicura, pedicura, pedi spa, veloterapia, cabello, cejas y pestañas." />
+  <meta property="og:title" content="Marcella Beauty Nails | Spa de uñas y belleza en Medellín" />
+  <meta property="og:description" content="Spa de uñas y belleza en el barrio La Floresta, Medellín." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200" />
+  <meta property="og:type" content="website" />
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín" />
+  <meta name="geo.position" content="6.2608;-75.5986" />
+  <meta name="ICBM" content="6.2608, -75.5986" />
+
+  <!-- ================= CIBERSEGURIDAD (CSP + Headers) ================= -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' data: https://images.unsplash.com https://cdn.jsdelivr.net;
+    media-src 'self' https:;
+    frame-src https://www.google.com https://maps.google.com;
+    connect-src 'self' https://cdn.jsdelivr.net;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- ================= TIPOGRAFÍAS + ICONOS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ================= [ CRM/CRO SLOT 1 ] PÍXELES EN HEAD =================
+       Insertar aquí: Google Ads, Facebook Pixel, TikTok Pixel, GTM
+       Ej: <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+       ======================================================================= -->
 </head>
+
 <body>
-    <!-- HEADER FIJO -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Marcella <span>Beauty Nails</span></h1>
-            </div>
-            <nav class="nav" id="nav">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="manicura.html">Manicura</a></li>
-                            <li><a href="pedicura.html">Pedicura</a></li>
-                            <li><a href="pedi_spa.html">Pedi Spa</a></li>
-                            <li><a href="veloterapia.html">Veloterapia</a></li>
-                            <li><a href="cabello.html">Cabello</a></li>
-                            <li><a href="#cejas">Diseño de Cejas</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h2 class="animate-title">Realza tu belleza, <span>renueva tu energía</span></h2>
-            <p class="animate-subtitle">Expertos en cuidado de uñas, pedi spa, veloterapia y salud capilar.</p>
-            <a href="#contacto" class="btn btn-primary animate-btn">Agenda tu cita</a>
+  <!-- ============================================================
+       HEADER FIJO - IDÉNTICO EN TODAS LAS PÁGINAS
+       ============================================================ -->
+  <header class="header">
+    <div class="container">
+
+      <!-- Logotipo (logo dorado SIN contenedor circular) -->
+      <div class="logo">
+        <a href="index.html#inicio" class="logo-link" aria-label="Ir al inicio">
+          <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Spa de uñas en Medellín" class="logo-img" />
+          <span class="logo-text"><span></span></span>
+        </a>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav class="nav" id="nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Servicios <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="manicura.html">Manicura</a></li>
+              <li><a href="pedicura.html">Pedicura</a></li>
+              <li><a href="pedi_spa.html">Pedi Spa</a></li>
+              <li><a href="veloterapia.html">Veloterapia</a></li>
+              <li><a href="cabello.html">Cuidado Capilar</a></li>
+              <li><a href="cejas.html">Diseño de Cejas</a></li>
+              <li><a href="pestanas.html">Pestañas</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <!-- Redes sociales dentro del menú (solo móvil) -->
+        <div class="nav-redes-movil">
+          <a href="https://wa.me/573122495747" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
+      </nav>
+
+      <!-- Redes sociales del navegador -->
+      <div class="header-redes">
+        <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO BANNER PRINCIPAL (con Particles.js / Mariposas)
+         ============================================================ -->
+    <section id="inicio" class="hero" aria-label="Portada principal">
+      <div id="particles-js" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="animate-up">Realza tu belleza, <span>renueva tu energía</span></h1>
+        <p class="animate-up">Expertas en cuidado de uñas, pedi spa, veloterapia y salud capilar, en el barrio La Floresta de Medellín.</p>
+        <div class="hero-acciones animate-up">
+          <a href="contacto.html" class="btn btn-primary">Agendar cita</a>
+          <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
+             class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios Exclusivos</h2>
-            <div class="services-grid">
-                <!-- Manicura -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+    <!-- ============================================================
+         SERVICIOS (Tarjetas Flip 3D suaves 1.2s)
+         ============================================================ -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2 class="section-title">Nuestros servicios</h2>
+        <p class="section-subtitle">Pasa el cursor o toca cada tarjeta para ver el detalle del servicio.</p>
+
+        <div class="services-grid">
+
+          <!-- Manicura -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Manicura, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Servicio de Manicura premium en Medellín" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-hand-sparkles"></i>
                     <h3>Manicura</h3>
-                    <p>Diseños exclusivos, semipermanente, acrílicas y más.</p>
-                    <a href="manicura.html" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <!-- Pedicura -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-foot"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Manicura premium</h3>
+                <p>Diseños exclusivos, esmaltado semipermanente y uñas acrílicas y esculpidas con productos de alta calidad.</p>
+                <a href="manicura.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pedicura -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Pedicura, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&q=80" alt="Servicio de Pedicura profesional" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-shoe-prints"></i>
                     <h3>Pedicura</h3>
-                    <p>Cuidado y embellecimiento de tus pies con técnicas avanzadas.</p>
-                    <a href="pedicura.html" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <!-- Pedi Spa -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-spa"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Pedicura profesional</h3>
+                <p>Limpieza profunda y embellecimiento de tus pies con técnicas avanzadas de exfoliación y limado.</p>
+                <a href="pedicura.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pedi Spa -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Pedi Spa, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Ritual Pedi Spa relajante" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-spa"></i>
                     <h3>Pedi Spa</h3>
-                    <p>Ritual de relajación con sales, exfoliación y masaje.</p>
-                    <a href="pedi_spa.html" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <!-- Veloterapia -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-fire"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Ritual Pedi Spa</h3>
+                <p>Inmersión aromática, exfoliación, mascarilla hidratante y masaje de reflexología podal.</p>
+                <a href="pedi_spa.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veloterapia -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Veloterapia, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Servicio de Veloterapia capilar" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-fire"></i>
                     <h3>Veloterapia</h3>
-                    <p>Tratamiento capilar con vela para eliminar puntas abiertas.</p>
-                    <a href="veloterapia.html" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <!-- Cabello -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cut"></i></div>
-                    <h3>Cabello</h3>
-                    <p>Cortes, color, aminoácidos, hidratación y más.</p>
-                    <a href="cabello.html" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="flip-card-back">
+                <h3>Veloterapia capilar</h3>
+                <p>Sella las puntas abiertas con calor de vela y devuelve brillo y fuerza sin cortar el largo.</p>
+                <a href="veloterapia.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cuidado Capilar -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Cuidado Capilar, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Tratamiento de Cuidado Capilar" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-scissors"></i>
+                    <h3>Cuidado Capilar</h3>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <!-- Diseño de Cejas -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Tratamientos capilares</h3>
+                <p>Aminoácidos, queratina, colágeno y nanoterapia para reparar la fibra capilar desde adentro.</p>
+                <a href="cabello.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Diseño de Cejas -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Diseño de Cejas, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&q=80" alt="Servicio de Diseño de Cejas" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-eye"></i>
                     <h3>Diseño de Cejas</h3>
-                    <p>Depilación con cera, sombreado y perfilado.</p>
-                    <a href="#cejas" class="service-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Diseño de cejas</h3>
+                <p>Depilación con hilo, henna, micropigmentación y laminado para enmarcar tu mirada.</p>
+                <a href="cejas.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
+          </article>
+
+          <!-- Pestañas -->
+          <article class="flip-card" tabindex="0" role="button" aria-label="Pestañas, pulsa para ver detalles">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=800&q=80" alt="Extensiones de Pestañas pelo a pelo" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-feather"></i>
+                    <h3>Pestañas</h3>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Pestañas</h3>
+                <p>Extensiones pelo a pelo, lifting, tinte y laminado con productos hipoalergénicos.</p>
+                <a href="pestanas.html" class="service-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="images/marcella.jpg" alt="Marcella - Fundadora">
+    <!-- ============================================================
+         SOBRE MÍ
+         ============================================================ -->
+    <section id="sobre-mi" class="section section-alt">
+      <div class="container">
+        <div class="about-container">
+
+          <article class="flip-card perfil-card" tabindex="0" role="button" aria-label="Tarjeta de Marcella, pulsa para ver su historia">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80" alt="Marcella, fundadora del spa" class="service-img" loading="lazy" />
+                  <div class="service-overlay">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Marcella</h3>
+                    <p class="overlay-rol">Fundadora del spa</p>
+                  </div>
+                  <span class="card-hint"><i class="fa-solid fa-hand-pointer"></i> Toca para ver más</span>
                 </div>
-                <div class="about-text">
-                    <h2>Marcella Beauty Nails</h2>
-                    <p>Con más de 10 años de experiencia en el mundo de la belleza, Marcella ha creado un espacio donde la relajación y el cuidado personal se combinan para ofrecer una experiencia única. Nuestra pasión es realzar tu belleza natural mientras te consentimos.</p>
-                    <p>Cada tratamiento está pensado para brindarte resultados excepcionales y momentos de bienestar. ¡Te esperamos!</p>
-                </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Su historia</h3>
+                <p>Más de 10 años dedicados a la belleza y al cuidado de las manos. Cada cita es un momento pensado para ti.</p>
+                <a href="contacto.html" class="service-link">Agendar cita <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
+          </article>
+
+          <div class="about-text-block">
+            <h2>Marcella Beauty Nails</h2>
+            <p>Con más de 10 años de experiencia en el mundo de la belleza, Marcella creó un espacio donde la relajación y el cuidado personal se combinan en una sola experiencia.</p>
+            <p>Cada tratamiento está pensado para darte resultados excepcionales y momentos de bienestar. Te esperamos.</p>
+            <a href="contacto.html" class="btn btn-primary">Conocer el spa</a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section id="galeria" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Galería de Momentos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/una1.jpg" alt="Manicura"></div>
-                <div class="gallery-item"><img src="images/una2.jpg" alt="Pedi Spa"></div>
-                <div class="gallery-item"><img src="images/una3.jpg" alt="Veloterapia"></div>
-                <div class="gallery-item"><img src="images/una4.jpg" alt="Cabello"></div>
-                <div class="gallery-item"><img src="images/una6.jpg" alt="Cejas"></div>
-                <div class="gallery-item"><img src="images/una7.jpg" alt="Pestañas"></div>
-                <div class="gallery-item"><img src="images/una8.jpg" alt="Sombreado"></div>
-                <div class="gallery-item"><img src="images/una9.jpg" alt="Uñas acrílicas"></div>
-            </div>
+    <!-- ============================================================
+         GALERÍA (con Modal expandible)
+         ============================================================ -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <p class="section-subtitle">Toca cualquier imagen para verla en grande.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-title="Trabajo de Manicura" tabindex="0" role="button" aria-label="Ver imagen Trabajo de Manicura en grande">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Trabajo de manicura profesional" loading="lazy" />
+            <span class="gallery-caption">Manicura</span>
+          </div>
+          <div class="gallery-item" data-title="Pedi Spa Relajante" tabindex="0" role="button" aria-label="Ver imagen Pedi Spa Relajante en grande">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Resultado de pedi spa relajante" loading="lazy" />
+            <span class="gallery-caption">Pedi Spa</span>
+          </div>
+          <div class="gallery-item" data-title="Resultado de Veloterapia" tabindex="0" role="button" aria-label="Ver imagen Resultado de Veloterapia en grande">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Resultado de veloterapia" loading="lazy" />
+            <span class="gallery-caption">Veloterapia</span>
+          </div>
+          <div class="gallery-item" data-title="Tratamiento Capilar" tabindex="0" role="button" aria-label="Ver imagen Tratamiento Capilar en grande">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Tratamiento capilar profesional" loading="lazy" />
+            <span class="gallery-caption">Cuidado Capilar</span>
+          </div>
+          <div class="gallery-item" data-title="Diseño de Cejas" tabindex="0" role="button" aria-label="Ver imagen Diseño de Cejas en grande">
+            <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&q=80" alt="Diseño de cejas profesional" loading="lazy" />
+            <span class="gallery-caption">Cejas</span>
+          </div>
+          <div class="gallery-item" data-title="Extensiones de Pestañas" tabindex="0" role="button" aria-label="Ver imagen Extensiones de Pestañas en grande">
+            <img src="https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=800&q=80" alt="Extensiones de pestañas pelo a pelo" loading="lazy" />
+            <span class="gallery-caption">Pestañas</span>
+          </div>
+          <div class="gallery-item" data-title="Uñas con Sombreado" tabindex="0" role="button" aria-label="Ver imagen Uñas con Sombreado en grande">
+            <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&q=80" alt="Uñas con sombreado elegante" loading="lazy" />
+            <span class="gallery-caption">Nail Art</span>
+          </div>
+          <div class="gallery-item" data-title="Uñas Acrílicas" tabindex="0" role="button" aria-label="Ver imagen Uñas Acrílicas en grande">
+            <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&q=80" alt="Uñas acrílicas esculpidas" loading="lazy" />
+            <span class="gallery-caption">Acrílicas</span>
+          </div>
         </div>
+
+        <!-- ============================================================
+             VIDEOS VERTICALES (Reels) - 4 contenedores nativos HTML5
+             ============================================================ -->
+        <h2 class="section-title" style="margin-top:70px;">Nuestros Reels</h2>
+        <p class="section-subtitle">Descubre el ambiente del spa en formato vertical.</p>
+
+        <div class="videos-grid">
+          <div class="video-item">
+            <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80">
+              <source src="videos/reel-manicura.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento video.
+            </video>
+            <span class="video-label">Manicura</span>
+          </div>
+          <div class="video-item">
+            <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80">
+              <source src="videos/reel-pedispa.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento video.
+            </video>
+            <span class="video-label">Pedi Spa</span>
+          </div>
+          <div class="video-item">
+            <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80">
+              <source src="videos/reel-cabello.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento video.
+            </video>
+            <span class="video-label">Cabello</span>
+          </div>
+          <div class="video-item">
+            <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=600&q=80">
+              <source src="videos/reel-pestanas.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento video.
+            </video>
+            <span class="video-label">Pestañas</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- TESTIMONIOS (SLIDER) -->
-    <section id="testimonios" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Clientes Felices</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial active">
-                    <p>“Nunca me habían durado tanto unas uñas acrílicas. El servicio es increíble.”</p>
-                    <h4>— Andrea G.</h4>
-                </div>
-                <div class="testimonial">
-                    <p>“La veloterapia es súper relajante y mi cabello quedó brillante.”</p>
-                    <h4>— Valentina R.</h4>
-                </div>
-                <div class="testimonial">
-                    <p>“El Pedi Spa es delicioso, me relajé tanto que casi me duermo en la silla.”</p>
-                    <h4>— Camila M.</h4>
-                </div>
-                <div class="testimonial">
-                    <p>“Atención profesional y ambiente acogedor. ¡Volveré siempre!”</p>
-                    <h4>— Laura P.</h4>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+    <!-- ============================================================
+         TESTIMONIOS - Carrusel Antes y Después
+         ============================================================ -->
+    <section id="testimonios" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Clientes felices</h2>
+        <p class="section-subtitle">Desliza el control para comparar resultados reales.</p>
+
+        <div class="antes-despues">
+          <div class="ad-slider" id="ad-slider" role="slider" aria-label="Comparador Antes y Después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <img class="ad-img despues" id="ad-despues" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=80" alt="Resultado después del servicio de manicura" />
+            <img class="ad-img antes"   id="ad-antes"   src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&q=80" alt="Estado antes del servicio de manicura" />
+            <div class="ad-handle" id="ad-handle" aria-hidden="true"></div>
+          </div>
+          <div class="ad-labels"><span>ANTES</span><span>DESPUÉS</span></div>
+
+          <p class="testimonial-text" id="ad-testimonio">"Nunca me habían durado tanto unas uñas acrílicas. El servicio es increíble."</p>
+          <p class="testimonial-author" id="ad-autor">— Andrea G.</p>
+
+          <div class="ad-nav">
+            <button type="button" class="ad-prev" aria-label="Testimonio anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="ad-next" aria-label="Testimonio siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2 class="section-title">Visítanos</h2>
-            <p>Estamos ubicados en el barrio La Floresta, Medellín.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Calle 123 #45-67, Medellín</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <p>+57 300 251 2333</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>citas@marcellabeauty.com</p>
-                </div>
-            </div>
-            <div class="contact-buttons">
-                <a href="https://wa.me/573122495747" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="https://www.instagram.com/spa_marcellanails" target="_blank" class="btn btn-instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            </div>
+    <!-- ============================================================
+         ACCESO A CONTACTO / UBICACIÓN
+         ============================================================ -->
+    <section class="section" id="ubicacion">
+      <div class="container">
+        <h2 class="section-title">Visítanos</h2>
+        <p class="section-subtitle">Estamos en el barrio La Floresta EStadio, Medellín. Escríbenos por el formulario de contacto y te confirmamos disponibilidad el mismo día.</p>
+        <div style="text-align:center;">
+          <a href="contacto.html" class="btn btn-primary">
+            <i class="fa-solid fa-location-dot"></i> Ver ubicación y formulario
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Marcella Beauty Nails. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+  </main>
 
-    <!-- SCRIPTS -->
-    <script src="script.js"></script>
+  <!-- ============================================================
+       FOOTER BLANCO - IDÉNTICO EN TODAS LAS PÁGINAS
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+
+        <!-- Columna 1: Marca -->
+        <div class="footer-col footer-brand">
+          <a href="index.html#inicio" aria-label="Ir al inicio">
+            <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Logo dorado" class="footer-logo" />
+          </a>
+          <p>Spa de uñas y belleza en el barrio La Floresta Estadio, Medellín. Un espacio diseñado para tu bienestar, renovación y cuidado personal.</p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <ul class="footer-menu">
+            <li><a href="index.html#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fa-solid fa-star"></i> Servicios</a></li>
+            <li><a href="index.html#sobre-mi"><i class="fa-solid fa-heart"></i> Sobre mí</a></li>
+            <li><a href="index.html#galeria"><i class="fa-solid fa-images"></i> Galería</a></li>
+            <li><a href="index.html#testimonios"><i class="fa-solid fa-comment-dots"></i> Testimonios</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Servicios -->
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-menu">
+            <li><a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a></li>
+            <li><a href="pedicura.html"><i class="fa-solid fa-shoe-prints"></i> Pedicura</a></li>
+            <li><a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a></li>
+            <li><a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a></li>
+            <li><a href="cabello.html"><i class="fa-solid fa-scissors"></i> Cuidado Capilar</a></li>
+            <li><a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a></li>
+            <li><a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto + Redes -->
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="footer-menu">
+            <li><a href="tel:+573122495747"><i class="fa-solid fa-phone"></i> +57 312 249 5747</a></li>
+            <li><a href="mailto:citas@marcellabeauty.com"><i class="fa-solid fa-envelope"></i> citas@marcellabeauty.com</a></li>
+            <li><a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellin" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> La Floresta, Medellín</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-clock"></i> Lun a Sáb, 9:00 a 19:00</a></li>
+          </ul>
+
+          <h3 class="footer-siguenos-titulo">Síguenos</h3>
+          <div class="footer-social-icons">
+            <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <nav aria-label="Enlaces legales">
+          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
+          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAL GALERÍA
+       ============================================================ -->
+  <div class="modal-galeria" id="modal-galeria" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-content">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar imagen">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="modal-img" src="" alt="" />
+      <h3 class="modal-title" id="modal-titulo"></h3>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BOTONES FLOTANTES
+       ============================================================ -->
+  <div class="scroll-buttons-container">
+    <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
+       class="btn-float float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button type="button" class="btn-float float-top" id="btnArriba" aria-label="Volver arriba">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- ================= LIBRERÍAS EXTERNAS (defer / async) ================= -->
+  <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script defer src="script.js"></script>
+
+  <!-- ================= [ CRM/CRO SLOT 2 ] PÍXELES AL CIERRE =================
+       Insertar aquí: Hotjar, Microsoft Clarity, chatbox (Tidio/Crisp), eventos de conversión
+       Ej: <script async src="https://static.hotjar.com/c/hotjar-XXXX.js?sv=6"></script>
+       ======================================================================== -->
 </body>
 </html>

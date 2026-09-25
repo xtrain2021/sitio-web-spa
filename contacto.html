@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Marcella Beauty Nails</title>
+  <meta name="description" content="Agenda tu cita en Marcella Beauty Nails. Formulario de contacto y ubicación en el barrio La Floresta, Medellín." />
+  <meta property="og:title" content="Contacto | Marcella Beauty Nails" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200" />
+  <meta property="og:type" content="website" />
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' data: https://images.unsplash.com;
+    frame-src https://www.google.com https://maps.google.com;
+    object-src 'none'; base-uri 'self'; form-action 'self';
+    frame-ancestors 'none'; upgrade-insecure-requests;
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html#inicio" class="logo-link" aria-label="Ir al inicio">
+          <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails" class="logo-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="logo-text" style="display:none;">Marcella <span>Beauty Nails</span></span>
+        </a>
+      </div>
+      <nav class="nav" id="nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Servicios <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="manicura.html">Manicura</a></li>
+              <li><a href="pedicura.html">Pedicura</a></li>
+              <li><a href="pedi_spa.html">Pedi Spa</a></li>
+              <li><a href="veloterapia.html">Veloterapia</a></li>
+              <li><a href="cabello.html">Cuidado Capilar</a></li>
+              <li><a href="cejas.html">Diseño de Cejas</a></li>
+              <li><a href="pestanas.html">Pestañas</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-redes-movil">
+          <a href="https://wa.me/573122495747" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </nav>
+      <div class="header-redes">
+        <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ENCABEZADO DE PÁGINA -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Hablemos de tu próxima cita</h1>
+        <p>Escríbenos por el formulario o por WhatsApp y te confirmamos disponibilidad el mismo día. También puedes visitarnos en La Floresta, Medellín.</p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO + DATOS -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contacto-wrapper-grid">
+
+          <!-- Formulario -->
+          <div class="contacto-form-box">
+            <h2>Formulario de contacto</h2>
+            <p>Cuéntanos qué servicio te interesa y cuándo te queda cómodo.</p>
+
+            <form id="form-contacto" novalidate>
+              <div class="form-grupo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
+                <span class="error-msg">Escribe tu nombre completo.</span>
+              </div>
+              <div class="form-grupo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+                <span class="error-msg">Revisa el correo, parece incompleto.</span>
+              </div>
+              <div class="form-grupo">
+                <label for="telefono">Teléfono o WhatsApp</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="300 000 0000" required />
+                <span class="error-msg">Escribe un número de al menos 7 dígitos.</span>
+              </div>
+              <div class="form-grupo">
+                <label for="servicio">Servicio de interés</label>
+                <select id="servicio" name="servicio">
+                  <option value="">Selecciona un servicio</option>
+                  <option value="Manicura">Manicura</option>
+                  <option value="Pedicura">Pedicura</option>
+                  <option value="Pedi Spa">Pedi Spa</option>
+                  <option value="Veloterapia">Veloterapia</option>
+                  <option value="Cuidado Capilar">Cuidado Capilar</option>
+                  <option value="Diseño de Cejas">Diseño de Cejas</option>
+                  <option value="Pestañas">Pestañas</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="form-grupo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas y qué días te quedan bien" required></textarea>
+                <span class="error-msg">Escribe al menos 10 caracteres.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+              </button>
+
+              <div class="form-aviso" id="form-aviso" role="status">
+                Mensaje enviado. Te responderemos por WhatsApp o correo dentro de las próximas horas.
+              </div>
+            </form>
+          </div>
+
+          <!-- Datos + Mapa -->
+          <div class="contacto-datos">
+            <h2>Dónde nos encontramos</h2>
+            <p>Barrio La Floresta, Medellín. Un espacio pensado para tu relajación.</p>
+            <ul class="datos-lista">
+              <li><i class="fa-solid fa-location-dot"></i> <span>Barrio La Floresta, Medellín, Antioquia</span></li>
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+573122495747">+57 312 249 5747</a></li>
+              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:citas@marcellabeauty.com">citas@marcellabeauty.com</a></li>
+              <li><i class="fa-solid fa-clock"></i> <span>Lunes a sábado, 9:00 a 19:00</span></li>
+            </ul>
+
+            <div class="map-container-box">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0297564789926!2d-75.59860232595565!3d6.2598107261734315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429b61b576c89%3A0x124c0d889ab3c06f!2sMarcella%20Beauty%20Nails!5e0!3m2!1ses-419!2sco!4v1789789413626!5m2!1ses-419!2sco"
+                title="Ubicación de Marcella Beauty Nails"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellín"
+               class="btn-mapa" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-location-arrow"></i> Cómo llegar
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html#inicio" aria-label="Ir al inicio">
+            <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails" class="footer-logo"
+                 onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<p style=&quot;font-family:Playfair Display,serif;font-size:1.5rem;color:#7d4e68;font-weight:700;margin-bottom:18px;&quot;>Marcella Beauty Nails</p>');" />
+          </a>
+          <p>Spa de uñas y belleza en el barrio La Floresta, Medellín. Un espacio diseñado para tu bienestar, renovación y cuidado personal.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <ul class="footer-menu">
+            <li><a href="index.html#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fa-solid fa-star"></i> Servicios</a></li>
+            <li><a href="index.html#sobre-mi"><i class="fa-solid fa-heart"></i> Sobre mí</a></li>
+            <li><a href="index.html#galeria"><i class="fa-solid fa-images"></i> Galería</a></li>
+            <li><a href="index.html#testimonios"><i class="fa-solid fa-comment-dots"></i> Testimonios</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-menu">
+            <li><a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a></li>
+            <li><a href="pedicura.html"><i class="fa-solid fa-shoe-prints"></i> Pedicura</a></li>
+            <li><a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a></li>
+            <li><a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a></li>
+            <li><a href="cabello.html"><i class="fa-solid fa-scissors"></i> Cuidado Capilar</a></li>
+            <li><a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a></li>
+            <li><a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="footer-menu">
+            <li><a href="tel:+573122495747"><i class="fa-solid fa-phone"></i> +57 312 249 5747</a></li>
+            <li><a href="mailto:citas@marcellabeauty.com"><i class="fa-solid fa-envelope"></i> citas@marcellabeauty.com</a></li>
+            <li><a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellin" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> La Floresta, Medellín</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-clock"></i> Lun a Sáb, 9:00 a 19:00</a></li>
+          </ul>
+          <h3 class="footer-siguenos-titulo">Síguenos</h3>
+          <div class="footer-social-icons">
+            <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <nav aria-label="Enlaces legales">
+          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
+          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scroll-buttons-container">
+    <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
+       class="btn-float float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button type="button" class="btn-float float-top" id="btnArriba" aria-label="Volver arriba">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <script defer src="script.js"></script>
+</body>
+</html>

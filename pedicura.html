@@ -1,83 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedicura - Marcella Beauty Nails</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedicura | Marcella Beauty Nails</title>
+  <meta name="description" content="Pedicura profesional en Medellín: clásica, semipermanente, spa y tratamientos para callosidades. Pies saludables y relajados." />
+  <meta property="og:title" content="Pedicura | Marcella Beauty Nails" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200" />
+  <meta property="og:type" content="website" />
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín" />
+  <meta name="geo.position" content="6.2608;-75.5986" />
+  <meta name="ICBM" content="6.2608, -75.5986" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' data: https://images.unsplash.com https://cdn.jsdelivr.net;
+    media-src 'self' https:;
+    frame-src https://www.google.com https://maps.google.com;
+    connect-src 'self' https://cdn.jsdelivr.net;
+    object-src 'none'; base-uri 'self'; form-action 'self';
+    frame-ancestors 'none'; upgrade-insecure-requests;
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Marcella <span>Beauty Nails</span></h1>
-            </div>
-            <nav class="nav" id="nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="manicura.html">Manicura</a></li>
-                            <li><a href="pedicura.html" class="active">Pedicura</a></li>
-                            <li><a href="pedi_spa.html">Pedi Spa</a></li>
-                            <li><a href="veloterapia.html">Veloterapia</a></li>
-                            <li><a href="cabello.html">Cabello</a></li>
-                            <li><a href="cejas.html">Diseño de Cejas</a></li>
-                            <li><a href="pestanas.html">Pestañas</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#galeria">Galería</a></li>
-                    <li><a href="index.html#testimonios">Testimonios</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <!-- [MEJORA PASO 6]: Logo dorado transparente oficial unificado con la página de inicio -->
+        <a href="index.html#inicio" class="logo-link" aria-label="Ir al inicio">
+          <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Spa de uñas en Medellín" class="logo-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="logo-text" style="display:none;">Marcella <span>Beauty Nails</span></span>
+        </a>
+      </div>
+      <nav class="nav" id="nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Servicios <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="manicura.html">Manicura</a></li>
+              <li><a href="pedicura.html">Pedicura</a></li>
+              <li><a href="pedi_spa.html">Pedi Spa</a></li>
+              <li><a href="veloterapia.html">Veloterapia</a></li>
+              <li><a href="cabello.html">Cuidado Capilar</a></li>
+              <li><a href="cejas.html">Diseño de Cejas</a></li>
+              <li><a href="pestanas.html">Pestañas</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-redes-movil">
+          <a href="https://wa.me/573122495747" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-    </header>
+      </nav>
+      <div class="header-redes">
+        <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-    <main class="service-detail">
-        <div class="container">
-            <div class="service-header">
-                <img src="images/pedicura.jpg" alt="Pedicura profesional" class="service-image">
-                <h2>🦶 Pedicura: Pies Saludables, Pasos Firmes</h2>
-            </div>
-            <div class="service-description">
-                <p>Tus pies merecen el mismo cuidado que tus manos. Nuestros tratamientos de pedicura no solo embellecen, sino que también mejoran la salud de tus pies, proporcionando relajación y bienestar.</p>
-                
-                <h3>Nuestros servicios de pedicura:</h3>
-                <ul>
-                    <li><strong>Pedicura clásica:</strong> Corte de uñas, cuidado de cutículas, exfoliación y esmaltado.</li>
-                    <li><strong>Pedicura semipermanente:</strong> Color de larga duración ideal para vacaciones o eventos.</li>
-                    <li><strong>Pedicura spa:</strong> Incluye exfoliación profunda, mascarilla hidratante y masaje relajante.</li>
-                    <li><strong>Tratamiento para hongos y callosidades:</strong> Técnicas especializadas para pies dañados.</li>
-                </ul>
+  <main class="service-detail">
+    <div class="container">
 
-                <h3>Beneficios adicionales:</h3>
-                <ul>
-                    <li>Mejora la circulación sanguínea mediante masajes.</li>
-                    <li>Elimina durezas y callosidades para una piel suave.</li>
-                    <li>Prevención de uñas encarnadas.</li>
-                    <li>Relajación total después de una larga jornada.</li>
-                </ul>
+      <div class="service-header">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&q=80"
+             alt="Servicio de pedicura profesional en Marcella Beauty Nails"
+             class="service-image" />
+        <h1>Pedicura: pies saludables, pasos firmes</h1>
+      </div>
 
-                <p>¡Date un gusto y camina con confianza! Agenda tu pedicura ahora.</p>
+      <div class="service-description">
+        <p>Tus pies merecen el mismo cuidado que tus manos. Nuestros tratamientos de pedicura no solo embellecen, también mejoran la salud de tus pies y te dan relajación y bienestar en cada sesión.</p>
 
-                <a href="https://wa.me/573002512333" class="btn btn-primary">Reserva tu cita por WhatsApp</a>
-            </div>
+        <h2>Nuestros servicios de pedicura</h2>
+        <ul>
+          <li><strong>Pedicura clásica:</strong> corte de uñas, cuidado de cutículas, exfoliación y esmaltado tradicional.</li>
+          <li><strong>Pedicura semipermanente:</strong> color de larga duración, ideal para vacaciones o eventos especiales.</li>
+          <li><strong>Pedicura spa:</strong> exfoliación profunda, mascarilla hidratante y masaje relajante.</li>
+          <li><strong>Tratamiento para hongos y callosidades:</strong> técnicas especializadas para pies dañados o maltratados.</li>
+        </ul>
+
+        <h2>Beneficios adicionales</h2>
+        <ul>
+          <li>Mejora la circulación sanguínea mediante masajes terapéuticos.</li>
+          <li>Elimina durezas y callosidades para una piel suave.</li>
+          <li>Previene las uñas encarnadas y otras molestias.</li>
+          <li>Relajación total después de una larga jornada.</li>
+        </ul>
+
+        <p>Date un gusto y camina con confianza. Agenda tu pedicura ahora y siente la diferencia desde la primera sesión.</p>
+
+        <div class="service-cta">
+          <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita%20de%20Pedicura."
+             class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> Reservar cita por WhatsApp
+          </a>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <div class="otros-servicios">
+          <h2>Otros servicios del spa</h2>
+          <div class="otros-servicios-lista">
+            <a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a>
+            <a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a>
+            <a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a>
+            <a href="cabello.html"><i class="fa-solid fa-scissors"></i> Cuidado Capilar</a>
+            <a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a>
+            <a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col footer-brand">
+          <!-- [MEJORA PASO 6]: Logo dorado transparente oficial unificado con la página de inicio -->
+          <a href="index.html#inicio" aria-label="Ir al inicio">
+            <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Logo dorado" class="footer-logo"
+                 onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<p style=&quot;font-family:Playfair Display,serif;font-size:1.5rem;color:#7d4e68;font-weight:700;margin-bottom:18px;&quot;>Marcella Beauty Nails</p>');" />
+          </a>
+          <p>Spa de uñas y belleza en el barrio La Floresta, Medellín. Un espacio diseñado para tu bienestar, renovación y cuidado personal.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <ul class="footer-menu">
+            <li><a href="index.html#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fa-solid fa-star"></i> Servicios</a></li>
+            <li><a href="index.html#sobre-mi"><i class="fa-solid fa-heart"></i> Sobre mí</a></li>
+            <li><a href="index.html#galeria"><i class="fa-solid fa-images"></i> Galería</a></li>
+            <li><a href="index.html#testimonios"><i class="fa-solid fa-comment-dots"></i> Testimonios</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-menu">
+            <li><a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a></li>
+            <li><a href="pedicura.html"><i class="fa-solid fa-shoe-prints"></i> Pedicura</a></li>
+            <li><a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a></li>
+            <li><a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a></li>
+            <li><a href="cabello.html"><i class="fa-solid fa-scissors"></i> Cuidado Capilar</a></li>
+            <li><a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a></li>
+            <li><a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="footer-menu">
+            <li><a href="tel:+573122495747"><i class="fa-solid fa-phone"></i> +57 312 249 5747</a></li>
+            <li><a href="mailto:citas@marcellabeauty.com"><i class="fa-solid fa-envelope"></i> citas@marcellabeauty.com</a></li>
+            <li><a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellin" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> La Floresta, Medellín</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-clock"></i> Lun a Sáb, 9:00 a 19:00</a></li>
+          </ul>
+          <h3 class="footer-siguenos-titulo">Síguenos</h3>
+          <div class="footer-social-icons">
+            <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <nav aria-label="Enlaces legales">
+          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
+          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scroll-buttons-container">
+    <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
+       class="btn-float float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button type="button" class="btn-float float-top" id="btnArriba" aria-label="Volver arriba">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <script defer src="script.js"></script>
 </body>
 </html>

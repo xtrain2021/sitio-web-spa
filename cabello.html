@@ -1,85 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratamientos Capilares - Marcella Beauty Nails</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tratamientos capilares | Marcella Beauty Nails</title>
+  <meta name="description" content="Tratamientos capilares en Medellín con aminoácidos, queratina, colágeno y nanoterapia para reparar la fibra capilar." />
+  <meta property="og:title" content="Tratamientos capilares | Marcella Beauty Nails" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200" />
+  <meta property="og:type" content="website" />
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín" />
+  <meta name="geo.position" content="6.2608;-75.5986" />
+  <meta name="ICBM" content="6.2608, -75.5986" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' data: https://images.unsplash.com https://cdn.jsdelivr.net;
+    media-src 'self' https:;
+    frame-src https://www.google.com https://maps.google.com;
+    connect-src 'self' https://cdn.jsdelivr.net;
+    object-src 'none'; base-uri 'self'; form-action 'self';
+    frame-ancestors 'none'; upgrade-insecure-requests;
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Marcella <span>Beauty Nails</span></h1>
-            </div>
-            <nav class="nav" id="nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="manicura.html">Manicura</a></li>
-                            <li><a href="pedicura.html">Pedicura</a></li>
-                            <li><a href="pedi_spa.html">Pedi Spa</a></li>
-                            <li><a href="veloterapia.html">Veloterapia</a></li>
-                            <li><a href="cabello.html" class="active">Cabello</a></li>
-                            <li><a href="cejas.html">Diseño de Cejas</a></li>
-                            <li><a href="pestanas.html">Pestañas</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#galeria">Galería</a></li>
-                    <li><a href="index.html#testimonios">Testimonios</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <!-- [MEJORA PASO 6]: Logo dorado transparente oficial unificado con la página de inicio -->
+        <a href="index.html#inicio" class="logo-link" aria-label="Ir al inicio">
+          <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Spa de uñas en Medellín" class="logo-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="logo-text" style="display:none;">Marcella <span>Beauty Nails</span></span>
+        </a>
+      </div>
+      <nav class="nav" id="nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Servicios <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="manicura.html">Manicura</a></li>
+              <li><a href="pedicura.html">Pedicura</a></li>
+              <li><a href="pedi_spa.html">Pedi Spa</a></li>
+              <li><a href="veloterapia.html">Veloterapia</a></li>
+              <li><a href="cabello.html">Cuidado Capilar</a></li>
+              <li><a href="cejas.html">Diseño de Cejas</a></li>
+              <li><a href="pestanas.html">Pestañas</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-redes-movil">
+          <a href="https://wa.me/573122495747" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/marcellabeautynails" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-    </header>
+      </nav>
+      <div class="header-redes">
+        <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-    <main class="service-detail">
-        <div class="container">
-            <div class="service-header">
-                <img src="images/cabello.jpg" alt="Tratamiento capilar con aminoácidos" class="service-image">
-                <h2>🌟 Tratamientos Capilares: Recupera la Vida de tu Cabello</h2>
-            </div>
-            <div class="service-description">
-                <p>En Marcella Beauty Nails, entendemos que tu cabello es tu mejor accesorio. Por eso, ofrecemos tratamientos avanzados con <strong>aminoácidos</strong> que penetran profundamente en la fibra capilar para reparar, fortalecer y darle un brillo espectacular desde adentro.</p>
-                
-                <h3>¿Qué son los aminoácidos y por qué tu cabello los necesita?</h3>
-                <p>Los aminoácidos son los componentes esenciales de la queratina, la proteína que forma tu cabello. Con el tiempo, el cabello pierde queratina por factores como tintes, decoloraciones, calor y medio ambiente. Nuestros tratamientos con aminoácidos:</p>
-                <ul>
-                    <li><strong>Reparan y reconstruyen</strong> la estructura interna del cabello dañado.</li>
-                    <li><strong>Aumentan la resistencia y elasticidad</strong>, previniendo la rotura.</li>
-                    <li><strong>Hidratan y suavizan</strong>, reduciendo el frizz y aportando brillo.</li>
-                    <li><strong>Estimulan el crecimiento</strong> saludable desde el folículo.</li>
-                    <li><strong>Protegen</strong> contra agresiones externas como rayos UV y calor.</li>
-                </ul>
+  <main class="service-detail">
+    <div class="container">
 
-                <h3>Nuestros tratamientos estrella:</h3>
-                <ul>
-                    <li><strong>Aminoácidos + Keratina:</strong> Ideal para cabellos decolorados o muy dañados.</li>
-                    <li><strong>Hidratación profunda con colágeno:</strong> Para cabellos secos y sin vida.</li>
-                    <li><strong>Nanoterapia capilar:</strong> Reparación intensiva con tecnología de partículas nanométricas.</li>
-                    <li><strong>Cepillado y corte:</strong> Renueva tu look con las últimas tendencias.</li>
-                </ul>
+      <div class="service-header">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
+             alt="Tratamiento capilar con aminoácidos en Marcella Beauty Nails"
+             class="service-image" />
+        <h1>Tratamientos capilares: recupera la vida de tu cabello</h1>
+      </div>
 
-                <p>¡Dale a tu cabello el cuidado que merece! Agenda una consulta y descubre el tratamiento perfecto para ti.</p>
+      <div class="service-description">
+        <p>Tu cabello es tu mejor accesorio. Por eso ofrecemos tratamientos avanzados con aminoácidos que penetran profundamente en la fibra capilar para reparar, fortalecer y dar brillo desde adentro.</p>
 
-                <a href="https://wa.me/573122495747" class="btn btn-primary">Reserva tu cita por WhatsApp</a>
-            </div>
+        <h2>Por qué tu cabello necesita aminoácidos</h2>
+        <p>Los aminoácidos son los componentes esenciales de la queratina, la proteína que forma tu cabello. Con el tiempo, el cabello pierde queratina por tintes, decoloraciones, calor y medio ambiente. Nuestros tratamientos con aminoácidos:</p>
+        <ul>
+          <li><strong>Reparan y reconstruyen</strong> la estructura interna del cabello dañado.</li>
+          <li><strong>Aumentan la resistencia y la elasticidad</strong>, previniendo la rotura.</li>
+          <li><strong>Hidratan y suavizan</strong>, reduciendo el frizz y aportando brillo.</li>
+          <li><strong>Estimulan el crecimiento</strong> saludable desde el folículo.</li>
+          <li><strong>Protegen</strong> frente a rayos UV y calor.</li>
+        </ul>
+
+        <h2>Tratamientos estrella</h2>
+        <ul>
+          <li><strong>Aminoácidos + queratina:</strong> ideal para cabellos decolorados o muy dañados.</li>
+          <li><strong>Hidratación profunda con colágeno:</strong> para cabellos secos y sin vida.</li>
+          <li><strong>Nanoterapia capilar:</strong> reparación intensiva con partículas nanométricas.</li>
+          <li><strong>Cepillado y corte:</strong> renueva tu look con las últimas tendencias.</li>
+        </ul>
+
+        <p>Agenda una consulta y descubre el tratamiento perfecto para ti. Nuestras especialistas analizarán tu tipo de cabello para recomendarte la mejor opción.</p>
+
+        <div class="service-cta">
+          <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20un%20tratamiento%20capilar."
+             class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> Reservar cita por WhatsApp
+          </a>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <div class="otros-servicios">
+          <h2>Otros servicios del spa</h2>
+          <div class="otros-servicios-lista">
+            <a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a>
+            <a href="pedicura.html"><i class="fa-solid fa-shoe-prints"></i> Pedicura</a>
+            <a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a>
+            <a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a>
+            <a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a>
+            <a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col footer-brand">
+          <!-- [MEJORA PASO 6]: Logo dorado transparente oficial unificado con la página de inicio -->
+          <a href="index.html#inicio" aria-label="Ir al inicio">
+            <img src="img/logo_transparente_dorado_spa.png" alt="Marcella Beauty Nails - Logo dorado" class="footer-logo"
+                 onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<p style=&quot;font-family:Playfair Display,serif;font-size:1.5rem;color:#7d4e68;font-weight:700;margin-bottom:18px;&quot;>Marcella Beauty Nails</p>');" />
+          </a>
+          <p>Spa de uñas y belleza en el barrio La Floresta, Medellín. Un espacio diseñado para tu bienestar, renovación y cuidado personal.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <ul class="footer-menu">
+            <li><a href="index.html#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fa-solid fa-star"></i> Servicios</a></li>
+            <li><a href="index.html#sobre-mi"><i class="fa-solid fa-heart"></i> Sobre mí</a></li>
+            <li><a href="index.html#galeria"><i class="fa-solid fa-images"></i> Galería</a></li>
+            <li><a href="index.html#testimonios"><i class="fa-solid fa-comment-dots"></i> Testimonios</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-menu">
+            <li><a href="manicura.html"><i class="fa-solid fa-hand-sparkles"></i> Manicura</a></li>
+            <li><a href="pedicura.html"><i class="fa-solid fa-shoe-prints"></i> Pedicura</a></li>
+            <li><a href="pedi_spa.html"><i class="fa-solid fa-spa"></i> Pedi Spa</a></li>
+            <li><a href="veloterapia.html"><i class="fa-solid fa-fire"></i> Veloterapia</a></li>
+            <li><a href="cabello.html"><i class="fa-solid fa-scissors"></i> Cuidado Capilar</a></li>
+            <li><a href="cejas.html"><i class="fa-solid fa-eye"></i> Diseño de Cejas</a></li>
+            <li><a href="pestanas.html"><i class="fa-solid fa-feather"></i> Pestañas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="footer-menu">
+            <li><a href="tel:+573122495747"><i class="fa-solid fa-phone"></i> +57 312 249 5747</a></li>
+            <li><a href="mailto:citas@marcellabeauty.com"><i class="fa-solid fa-envelope"></i> citas@marcellabeauty.com</a></li>
+            <li><a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellin" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> La Floresta, Medellín</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-clock"></i> Lun a Sáb, 9:00 a 19:00</a></li>
+          </ul>
+          <h3 class="footer-siguenos-titulo">Síguenos</h3>
+          <div class="footer-social-icons">
+            <a href="https://wa.me/573122495747" class="red-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/marcellabeautynails" class="red-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/marcellabeautynails" class="red-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
+        <nav aria-label="Enlaces legales">
+          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
+          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scroll-buttons-container">
+    <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
+       class="btn-float float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button type="button" class="btn-float float-top" id="btnArriba" aria-label="Volver arriba">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <script defer src="script.js"></script>
 </body>
 </html>

@@ -447,7 +447,10 @@
     <section class="section" id="ubicacion">
       <div class="container">
         <h2 class="section-title">Visítanos</h2>
-        <p class="section-subtitle">Estamos en el barrio La Floresta EStadio, Medellín. Escríbenos por el formulario de contacto y te confirmamos disponibilidad el mismo día.</p>
+        <p class="section-subtitle">Estamos en el barrio La Floresta Estadio, Medellín. Escríbenos por el formulario de contacto o escríbenos por
+          <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" class="link-whatsapp-inline">WhatsApp</a>
+          y te confirmamos disponibilidad el mismo día.
+        </p>
         <div style="text-align:center;">
           <a href="contacto.html" class="btn btn-primary">
             <i class="fa-solid fa-location-dot"></i> Ver ubicación y formulario
@@ -522,8 +525,10 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
         <nav aria-label="Enlaces legales">
-          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
-          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+          <!-- [CORRECCIÓN 404]: en vez de apuntar a archivos que no existen en el servidor,
+               estos enlaces abren un modal interno (ver JS sección 11 y HTML al final del body) -->
+          <a href="#" data-modal="privacidad">Política de privacidad</a>
+          <a href="#" data-modal="terminos">Términos y condiciones</a>
         </nav>
       </div>
     </div>
@@ -539,6 +544,20 @@
       </button>
       <img id="modal-img" src="" alt="" />
       <h3 class="modal-title" id="modal-titulo"></h3>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL LEGAL (Términos y condiciones / Política de privacidad)
+       [CORRECCIÓN 404]: reemplaza los enlaces rotos del footer
+       ============================================================ -->
+  <div class="modal-legal" id="modal-legal" role="dialog" aria-modal="true" aria-labelledby="modal-legal-titulo">
+    <div class="modal-legal-content">
+      <button type="button" class="modal-close" id="modal-legal-close" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="modal-legal-titulo" id="modal-legal-titulo"></h3>
+      <div class="modal-legal-texto" id="modal-legal-texto"></div>
     </div>
   </div>
 

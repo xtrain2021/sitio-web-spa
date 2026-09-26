@@ -168,11 +168,29 @@
         });
       }
 
-      // [MEJORA PASO 2]: Garantizar que los enlaces y botones (ej: "Agendar cita") no interfieran con el giro
-      // y permitan la navegación y redirección directa a la página destino
+      // [MEJORA PASO 2 + MÓVIL]: Garantizar que los enlaces y botones (ej: "Ver detalles" y "Agendar cita")
+      // no interfieran con el giro y permitan la navegación inmediata, incluso en pantallas táctiles.
+      // En iOS/Android el 'click' a veces se retrasa o se pierde mientras el contenedor padre está
+      // en pleno giro 3D (rotateY); por eso navegamos directamente en 'touchend' y neutralizamos
+      // el click fantasma posterior para no disparar la navegación dos veces.
       enlaces.forEach(function (enlace) {
+        let navegoPorToque = false;
+
+        enlace.addEventListener('touchend', function (e) {
+          if (!enlace.href) return;
+          e.preventDefault();
+          e.stopPropagation();
+          navegoPorToque = true;
+          window.location.href = enlace.href;
+        }, { passive: false });
+
         enlace.addEventListener('click', function (e) {
           e.stopPropagation(); // Evita que el contenedor capture el clic y cancele la redirección
+          if (navegoPorToque) {
+            // El touchend ya inició la navegación: evitamos el click fantasma duplicado
+            e.preventDefault();
+            navegoPorToque = false;
+          }
         });
       });
 
@@ -250,14 +268,37 @@
         dentro: false
       };
 
-      heroBanner.addEventListener('mousemove', function (e) {
-        const rect = heroBanner.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+      // [MEJORA PASO 7 - RENDIMIENTO]: se cachea el rect del hero en vez de llamar
+      // getBoundingClientRect() en cada mousemove (costoso, fuerza reflow). Solo se
+      // recalcula cuando cambia el layout (resize / scroll), no en cada movimiento.
+      let heroRect = heroBanner.getBoundingClientRect();
+      function actualizarHeroRect() { heroRect = heroBanner.getBoundingClientRect(); }
+      window.addEventListener('resize', actualizarHeroRect, { passive: true });
+      window.addEventListener('scroll', actualizarHeroRect, { passive: true });
+
+      function actualizarPosicionCursor(clientX, clientY) {
+        mouse.x = clientX - heroRect.left;
+        mouse.y = clientY - heroRect.top;
         mouse.dentro = true;
+      }
+
+      // Captura limpia del mousemove en pantallas de escritorio
+      heroBanner.addEventListener('mousemove', function (e) {
+        actualizarPosicionCursor(e.clientX, e.clientY);
       }, { passive: true });
 
       heroBanner.addEventListener('mouseleave', function () {
+        mouse.dentro = false;
+      }, { passive: true });
+
+      // Seguimiento también con el dedo en móviles/tablets, sin bloquear el scroll
+      heroBanner.addEventListener('touchmove', function (e) {
+        if (e.touches && e.touches[0]) {
+          actualizarPosicionCursor(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      heroBanner.addEventListener('touchend', function () {
         mouse.dentro = false;
       }, { passive: true });
 
@@ -472,6 +513,56 @@
     });
   
     /* =========================================================
+       08b. MODAL LEGAL (Términos y condiciones / Política de privacidad)
+       [NUEVO - CORRECCIÓN 404]: reemplaza los enlaces rotos del footer
+       ========================================================= */
+    const modalLegal = document.getElementById('modal-legal');
+    const modalLegalTitulo = document.getElementById('modal-legal-titulo');
+    const modalLegalTexto = document.getElementById('modal-legal-texto');
+    const modalLegalClose = document.getElementById('modal-legal-close');
+
+    const contenidoLegal = {
+      privacidad: {
+        titulo: 'Política de privacidad',
+        texto: '<p>En Marcella Beauty Nails protegemos tus datos personales. La información que compartes en nuestro formulario de contacto (nombre, correo, teléfono y mensaje) se usa únicamente para responder tu solicitud y agendar tu cita.</p>' +
+               '<p>No compartimos ni vendemos tus datos a terceros. Puedes solicitar la eliminación de tu información escribiéndonos por WhatsApp o al correo citas@marcellabeauty.com.</p>'
+      },
+      terminos: {
+        titulo: 'Términos y condiciones',
+        texto: '<p>Al agendar una cita con Marcella Beauty Nails aceptas nuestras políticas de puntualidad y cancelación: te pedimos avisar con al menos 3 horas de anticipación si necesitas reprogramar.</p>' +
+               '<p>Los precios y disponibilidad de servicios pueden variar según temporada. Para dudas sobre un servicio en particular, contáctanos antes de tu cita por el formulario o por WhatsApp.</p>'
+      }
+    };
+
+    document.querySelectorAll('[data-modal]').forEach(function (enlace) {
+      enlace.addEventListener('click', function (e) {
+        e.preventDefault();
+        const info = contenidoLegal[enlace.dataset.modal];
+        if (!info || !modalLegal) return;
+        modalLegalTitulo.textContent = info.titulo;
+        modalLegalTexto.innerHTML = info.texto;
+        modalLegal.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function cerrarModalLegal() {
+      if (!modalLegal) return;
+      modalLegal.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    if (modalLegalClose) modalLegalClose.addEventListener('click', cerrarModalLegal);
+    if (modalLegal) {
+      modalLegal.addEventListener('click', function (e) {
+        if (e.target === modalLegal) cerrarModalLegal();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrarModalLegal();
+    });
+
+    /* =========================================================
        09. CARRUSEL ANTES / DESPUÉS + TESTIMONIOS
        ========================================================= */
     const adSlider = document.getElementById('ad-slider');
@@ -501,6 +592,37 @@
         despues: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
         texto: 'El Pedi Spa es delicioso, me relajé tanto que casi me duermo.',
         autor: 'Camila M.'
+      },
+      /* [NUEVO]: 5 testimonios agregados respetando la misma estructura del slider */
+      {
+        antes: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
+        despues: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
+        texto: 'Excelente servicio de hidratación de cabello, quedó sedoso y con un brillo increíble.',
+        autor: 'Lina'
+      },
+      {
+        antes: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&q=80',
+        despues: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&q=80',
+        texto: 'Las uñas de mis pies quedaron muy pulidas y perfectas, una atención impecable.',
+        autor: 'Natalia'
+      },
+      {
+        antes: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
+        despues: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
+        texto: 'El corte de cabello me quedó genial, justo el estilo moderno que estaba buscando.',
+        autor: 'Alejandra'
+      },
+      {
+        antes: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
+        despues: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
+        texto: 'Mi cabello estaba súper maltratado por procesos anteriores y Marcella Beauty Nails lo restauró por completo.',
+        autor: 'Milena'
+      },
+      {
+        antes: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
+        despues: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=80',
+        texto: 'Es un spa súper integral, la atención y todos los servicios son 1A. Súper recomendado.',
+        autor: 'Sandra'
       }
     ];
   

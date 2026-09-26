@@ -21,8 +21,10 @@
   --sombra-premium: 0 10px 30px rgba(125, 78, 104, 0.08);
   --sombra-hover: 0 15px 35px rgba(125, 78, 104, 0.15);
   --radio: 16px;
-  /* [MEJORA PASO 5]: Altura proporcional reducida del header (de 100px a 76px) para un diseño más estilizado */
-  --alto-header: 76px;
+  /* [MEJORA - LOGOS UNIFICADOS]: se ajusta de 76px a 80px para que el header siga
+     calzando exactamente con la nueva altura del logo (60px + padding), sin dejar
+     huecos ni recortar el contenido que hace scroll hacia las anclas */
+  --alto-header: 80px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,6 +69,15 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto 45px;
   font-size: 1rem;
 }
+/* [NUEVO]: enlace directo a WhatsApp dentro del texto de "Visítanos" */
+.link-whatsapp-inline {
+  color: var(--color-whatsapp);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transicion);
+}
+.link-whatsapp-inline:hover { color: var(--color-whatsapp-hover); }
 
 .btn {
   display: inline-flex;
@@ -126,14 +137,14 @@ button { font-family: inherit; cursor: pointer; }
 
 .logo-link { display: flex; align-items: center; gap: 12px; }
 
-/* [MEJORA PASO 5]: Logo estilizado y proporcional (de 150px a 54px; 46px en scroll) */
+/* [MEJORA - LOGOS UNIFICADOS]: misma altura proporcional que .footer-logo en PC (60px) */
 .logo-img {
-  height: 54px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   transition: var(--transicion);
 }
-.header.scrolled .logo-img { height: 46px; }
+.header.scrolled .logo-img { height: 50px; }
 
 .logo-text {
   font-family: var(--fuente-titulos);
@@ -442,6 +453,9 @@ button { font-family: inherit; cursor: pointer; }
   cursor: pointer;
   pointer-events: auto;
   text-decoration: none;
+  /* [MEJORA MÓVIL]: evita que el navegador retrase/cancele el toque esperando un gesto
+     de zoom/scroll sobre el contenedor 3D que está en pleno giro */
+  touch-action: manipulation;
 }
 .service-link:hover {
   background-color: var(--color-principal);
@@ -579,6 +593,57 @@ button { font-family: inherit; cursor: pointer; }
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+/* ================= 08b. MODAL LEGAL (Términos / Política de privacidad) ================= */
+/* [NUEVO - CORRECCIÓN 404]: mismo patrón visual que .modal-galeria, adaptado a texto largo */
+.modal-legal {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+.modal-legal.visible { display: flex; }
+.modal-legal-content {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 18px;
+  overflow-y: auto;
+  padding: 40px 34px 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  animation: zoomIn 0.4s ease;
+}
+.modal-legal-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  color: var(--color-secundario);
+  margin-bottom: 16px;
+}
+.modal-legal-texto { color: var(--color-grafito); font-size: 0.95rem; line-height: 1.75; }
+.modal-legal-texto p { margin-bottom: 14px; }
+.modal-legal .modal-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  background: var(--color-acento);
+  border: none;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: var(--color-secundario);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transicion);
+  z-index: 10;
+}
+.modal-legal .modal-close:hover { background: var(--color-principal); color: #fff; transform: rotate(90deg); }
+@media (max-width: 768px) {
+  .modal-legal-content { padding: 32px 20px 24px; max-height: 80vh; }
+  .modal-legal-titulo { font-size: 1.3rem; }
+}
 
 /* ================= 09. VIDEOS VERTICALES ================= */
 .videos-grid {
@@ -886,8 +951,8 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 40px;
 }
 .footer-logo {
-  /* [MEJORA PASO 5 Y 6]: Altura del logo de footer proporcional (de 150px a 80px) */
-  height: 80px;
+  /* [MEJORA - LOGOS UNIFICADOS]: misma altura que .logo-img del header en PC (60px) */
+  height: 60px;
   width: auto;
   object-fit: contain;
   margin-bottom: 18px;
@@ -991,6 +1056,82 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
+}
+
+/* =========================================================================
+   14b. EFECTO CINEMATOGRÁFICO "BORDER BEAM" (luz continua en el borde)
+   CSS puro con aceleración por hardware (transform/opacity + @property),
+   ultra fluido en celulares al no depender de repintados de layout.
+   ========================================================================= */
+@property --angulo-beam {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* [CORRECCIÓN CRÍTICA]: .flip-card-front y .flip-card-back YA tienen "position: absolute"
+   (necesario para el giro 3D) y .gallery-item/.video-item/.antes-despues YA tienen
+   "position: relative" definidos más arriba en este archivo. Aquí solo se agrega el
+   contexto de apilamiento (isolation), sin tocar su "position" para no descuadrar
+   el grid ni romper la animación de giro. */
+.flip-card-front,
+.flip-card-back,
+.gallery-item,
+.video-item,
+.antes-despues {
+  isolation: isolate;
+}
+/* Estos dos SÍ necesitan position:relative porque no lo tenían definido antes */
+.contacto-form-box,
+.contacto-datos {
+  position: relative;
+  isolation: isolate;
+}
+
+.flip-card-front::after,
+.flip-card-back::after,
+.gallery-item::after,
+.video-item::after,
+.antes-despues::after,
+.contacto-form-box::after,
+.contacto-datos::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--angulo-beam),
+    transparent 0%,
+    transparent 72%,
+    var(--color-blanco) 82%,
+    var(--color-principal) 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: girar-border-beam 4.5s linear infinite;
+  pointer-events: none;
+  z-index: 6;
+  will-change: transform;
+}
+/* El video ya tiene su propio ::after implícito vía overflow:hidden en su contenedor,
+   por lo que el beam se recorta automáticamente al radio de la tarjeta */
+@keyframes girar-border-beam {
+  to { --angulo-beam: 360deg; }
+}
+/* Respeta accesibilidad: sin animación para quienes prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-front::after,
+  .flip-card-back::after,
+  .gallery-item::after,
+  .video-item::after,
+  .antes-despues::after,
+  .contacto-form-box::after,
+  .contacto-datos::after {
+    animation: none;
+  }
 }
 
 /* =========================================================================
@@ -1228,15 +1369,27 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .logo-img { height: 48px; }
+  /* [MEJORA - LOGOS UNIFICADOS]: header y footer se reducen de forma homogénea a 65px en móvil */
+  .logo-img { height: 65px; }
+  .header.scrolled .logo-img { height: 65px; }
   .logo-text { font-size: 1.25rem; }
   .logo-text span { font-size: 0.9rem; }
+  .footer-logo { height: 65px; margin-bottom: 12px; }
 
   .section { padding: 55px 0; }
   .section-title { font-size: 1.9rem; }
 
-  .footer-columns-grid { grid-template-columns: 1fr; gap: 30px; }
-  .footer-bottom { justify-content: center; text-align: center; }
+  /* [MEJORA - FOOTER COMPACTO]: paddings y márgenes verticales reducidos para evitar scroll largo */
+  .footer { padding: 32px 0 16px; }
+  .footer-columns-grid { grid-template-columns: 1fr; gap: 22px; margin-bottom: 22px; }
+  .footer-col h3 { margin-bottom: 10px; font-size: 1.05rem; }
+  .footer-menu li { margin-bottom: 6px; }
+  .footer-menu a { font-size: 0.88rem; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.5; }
+  .footer-siguenos-titulo { margin: 12px 0 8px; }
+  .footer-social-icons a { width: 38px; height: 38px; font-size: 0.95rem; }
+  .footer-bottom { justify-content: center; text-align: center; padding-top: 14px; gap: 6px; font-size: 0.8rem; }
+  .footer-bottom nav { gap: 14px; }
 
   .contacto-form-box, .contacto-datos { padding: 26px 20px; }
   .scroll-buttons-container { right: 16px; bottom: 16px; gap: 12px; }

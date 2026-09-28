@@ -522,7 +522,7 @@
       privacidad: {
         titulo: 'Política de privacidad',
         texto: '<p>En Marcella Beauty Nails protegemos tus datos personales. La información que compartes en nuestro formulario de contacto (nombre, correo, teléfono y mensaje) se usa únicamente para responder tu solicitud y agendar tu cita.</p>' +
-               '<p>No compartimos ni vendemos tus datos a terceros. Puedes solicitar la eliminación de tu información escribiéndonos por WhatsApp o al correo citas@marcellabeauty.com.</p>'
+               '<p>No compartimos ni vendemos tus datos a terceros. Puedes solicitar la eliminación de tu información escribiéndonos por WhatsApp o al correo marcellanailspa22@gmail.com.</p>'
       },
       terminos: {
         titulo: 'Términos y condiciones',

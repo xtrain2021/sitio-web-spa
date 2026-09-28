@@ -180,7 +180,7 @@
           <h3>Contacto</h3>
           <ul class="footer-menu">
             <li><a href="tel:+573122495747"><i class="fa-solid fa-phone"></i> +57 312 249 5747</a></li>
-            <li><a href="mailto:citas@marcellabeauty.com"><i class="fa-solid fa-envelope"></i> citas@marcellabeauty.com</a></li>
+            <li><a href="mailto:marcellanailspa22@gmail.com"><i class="fa-solid fa-envelope"></i> marcellanailspa22@gmail.com</a></li>
             <li><a href="https://maps.google.com/?q=Marcella+Beauty+Nails+La+Floresta+Medellin" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> La Floresta, Medellín</a></li>
             <li><a href="contacto.html"><i class="fa-solid fa-clock"></i> Lun a Sáb, 9:00 a 19:00</a></li>
           </ul>
@@ -195,13 +195,26 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Marcella Beauty Nails. Todos los derechos reservados.</p>
         <nav aria-label="Enlaces legales">
-          <a href="politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
-          <a href="terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+          <a href="#" data-modal="privacidad">Política de privacidad</a>
+          <a href="#" data-modal="terminos">Términos y condiciones</a>
         </nav>
       </div>
+
     </div>
   </footer>
-
+  <!-- ============================================================
+       MODAL LEGAL (Términos y condiciones / Política de privacidad)
+       ============================================================ -->
+       <div class="modal-legal" id="modal-legal" role="dialog" aria-modal="true" aria-labelledby="modal-legal-titulo">
+        <div class="modal-legal-content">
+          <button type="button" class="modal-close" id="modal-legal-close" aria-label="Cerrar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="modal-legal-titulo" id="modal-legal-titulo"></h3>
+          <div class="modal-legal-texto" id="modal-legal-texto"></div>
+        </div>
+      </div>
+    
   <div class="scroll-buttons-container">
     <a href="https://wa.me/573122495747?text=Hola%20Marcella%20Beauty%20Nails,%20deseo%20agendar%20una%20cita."
        class="btn-float float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">

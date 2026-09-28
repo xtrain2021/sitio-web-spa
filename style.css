@@ -139,7 +139,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* [MEJORA - LOGOS UNIFICADOS]: misma altura proporcional que .footer-logo en PC (60px) */
 .logo-img {
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   transition: var(--transicion);
@@ -969,7 +969,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .footer-logo {
   /* [MEJORA - LOGOS UNIFICADOS]: misma altura que .logo-img del header en PC (60px) */
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   margin-bottom: 18px;

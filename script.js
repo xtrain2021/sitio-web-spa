@@ -573,39 +573,41 @@
   
     const testimonios = [
       {
-        antes: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=80',
+        antes: 'img/galeria/manicura_2.png',
+        despues: 'img/galeria/galeria_acrilicas.png',
         texto: 'Nunca me habían durado tanto unas uñas acrílicas. El servicio es increíble.',
         autor: 'Andrea G.'
       },
       {
-        antes: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
-        texto: 'La veloterapia es súper relajante y mi cabello quedó brillante.',
+        antes: 'img/galeria/galeria_veloterapia.png',
+        despues: 'img/galeria/manicura_pedicura_.jpg',
+        texto: 'La veloterapia es súper relajante.',
         autor: 'Valentina R.'
       },
       {
-        antes: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
+        antes: 'img/galeria/pedispa_1.jpg',
+        despues: 'img/galeria/',
         texto: 'El Pedi Spa es delicioso, me relajé tanto que casi me duermo.',
         autor: 'Camila M.'
       },
       /* [NUEVO]: 5 testimonios agregados respetando la misma estructura del slider */
       {
-        antes: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
+        antes: 'img/galeria/cabello_antes.jpg',
+        despues: 'img/galeria/cabello_despues.jpg',
         texto: 'Excelente servicio de hidratación de cabello, quedó sedoso y con un brillo increíble.',
         autor: 'Lina'
       },
+      
+      
       {
-        antes: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&q=80',
+        antes: 'img/galeria/pedicura_spaantes.jpg',
+        despues: 'img/galeria/pedicura_spadespues.jpg',
         texto: 'Las uñas de mis pies quedaron muy pulidas y perfectas, una atención impecable.',
         autor: 'Natalia'
       },
       {
-        antes: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
+        antes: 'img/galeria/corte_antes.jpg',
+        despues: 'img/galeria/corte_despues.jpg',
         texto: 'El corte de cabello me quedó genial, justo el estilo moderno que estaba buscando.',
         autor: 'Alejandra'
       },

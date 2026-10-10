@@ -368,16 +368,11 @@ button { font-family: inherit; cursor: pointer; }
   overflow: hidden;
 }
 .service-img {
-    width: 95%;                 /* Incremeantado de 85% a 95% para aprovechar casi todo el ancho disponible */
-    max-width: 300px;           /* Incrementado de 220px a 270px para que se expanda más en pantallas grandes */
-    height: auto;               /* Mantiene la proporción perfecta */
-    margin: 80px auto 0 auto;   /* Centra horizontalmente y reduce levemente el margen superior para dar espacio */
-    display: block;             
-    object-fit: contain;        /* Mantiene el logo siempre completo y visible */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que las fotos de servicios vuelvan a pantalla completa */
     transition: transform 1.2s ease-in-out;
 }
-
-
 .flip-card:hover .service-img,
 .flip-card:focus-visible .service-img {
   transform: scale(1.12);
@@ -721,15 +716,17 @@ button { font-family: inherit; cursor: pointer; }
 .ad-slider {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 560px;                  /* más alto para que la foto se vea completa */
   border-radius: 14px;
   overflow: hidden;
   user-select: none;
+  background: var(--color-acento);
 }
 .ad-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;            /* muestra la imagen completa, sin recortar */
+  background: var(--color-acento);
   transition: opacity 0.6s ease;
 }
 .ad-img.antes { z-index: 2; }
@@ -821,16 +818,17 @@ button { font-family: inherit; cursor: pointer; }
 
 .service-image {
   width: 100%;
-  max-width: 640px;
-  height: 360px;
-  object-fit: cover;
+  max-width: 400px;           /* 💡 Reducimos un poco el ancho máximo para equilibrar la tarjeta */
+  height: 480px;              /* 💡 INCREMENTADO de 360px a 480px para dar espacio vertical a los 4 dedos */
+  object-fit: cover;          /* Mantiene el diseño expandido sin bordes vacíos a los lados */
+  object-position: center top;/* 💡 Alinea el encuadre arriba para revelar las uñas superiores por completo */
   margin: 0 auto 30px;
   border-radius: var(--radio);
   box-shadow: var(--sombra-hover);
   background-color: var(--color-acento);
-  /* [MEJORA PASO 3]: Efecto hover zoom homogéneo para tarjetas de servicios en páginas secundarias */
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
+
 .service-image:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 20px 40px rgba(125, 78, 104, 0.2);
@@ -1421,7 +1419,7 @@ button { font-family: inherit; cursor: pointer; }
 
   .videos-grid { gap: 16px; }
   .video-item { flex: 0 0 200px; height: 360px; }
-  .ad-slider { height: 320px; }
+  .ad-slider { height: 400px; }
 
   /* Ajustes de página de detalle en móvil */
   .service-detail { padding: calc(var(--alto-header) + 40px) 0 60px; }
@@ -1430,4 +1428,50 @@ button { font-family: inherit; cursor: pointer; }
   .service-description { font-size: 0.98rem; }
   .service-description h2 { font-size: 1.3rem; margin-top: 28px; }
   .otros-servicios-lista a { padding: 8px 16px; font-size: 0.85rem; }
+}
+.about-logo-img {
+    width: 95%;
+    max-width: 270px;
+    height: auto;
+    margin: 25px auto 0 auto;
+    display: block;
+    object-fit: contain; /* Controla exclusivamente el logo dorado */
+    transition: transform 1.2s ease-in-out;
+}
+
+/* Efecto hover exclusivo para el logo de la fundadora */
+.flip-card:hover .about-logo-img {
+    transform: scale(1.12);
+}
+/* =========================================================================
+   Ajuste exclusivo para videos de la sección Nuestros Reels
+   ========================================================================= */
+.videos-grid .video-item video {
+    object-fit: contain;     /* Muestra el logo completo sin recortarlo */
+    background-color: #000;  /* Mantiene el fondo negro estético de la tarjeta */
+}
+/* =========================================================================
+   CAMBIO DE COLORES SIN ALTERAR EL FONDO ORIGINAL DEL BANNER
+   ========================================================================= */
+
+/* Título principal en un tono Palo de Rosa profundo y legible */
+.hero h1 {
+  color: #61354c !important; /* Palo de rosa oscuro de alta visibilidad */
+  text-shadow: 0px 2px 4px rgba(125, 78, 104, 0.15);
+}
+
+/* Segunda línea del título en un degradado Dorado Oro Metálico */
+.hero h1 span {
+  background: linear-gradient(135deg, #bd913c 0%, #e3ba64 50%, #997123 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+  display: block; /* Mantiene la separación de línea original */
+}
+
+/* Párrafo descriptivo más oscuro para un contraste óptimo */
+.hero p {
+  color: #2e2e2e !important; 
+  font-weight: 600;
 }

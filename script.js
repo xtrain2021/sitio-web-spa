@@ -571,67 +571,31 @@
     const adPrev = document.querySelector('.ad-prev');
     const adNext = document.querySelector('.ad-next');
   
-    const testimonios = [
-      {
-        antes: 'img/galeria/manicura_2.png',
-        despues: 'img/galeria/galeria_acrilicas.png',
-        texto: 'Nunca me habían durado tanto unas uñas acrílicas. El servicio es increíble.',
-        autor: 'Andrea G.'
-      },
-      {
-        antes: 'img/galeria/galeria_veloterapia.png',
-        despues: 'img/galeria/manicura_pedicura_.jpg',
-        texto: 'La veloterapia es súper relajante.',
-        autor: 'Valentina R.'
-      },
-      {
-        antes: 'img/galeria/pedispa_1.jpg',
-        despues: 'img/galeria/',
-        texto: 'El Pedi Spa es delicioso, me relajé tanto que casi me duermo.',
-        autor: 'Camila M.'
-      },
-      /* [NUEVO]: 5 testimonios agregados respetando la misma estructura del slider */
-      {
-        antes: 'img/galeria/cabello_antes.jpg',
-        despues: 'img/galeria/cabello_despues.jpg',
-        texto: 'Excelente servicio de hidratación de cabello, quedó sedoso y con un brillo increíble.',
-        autor: 'Lina'
-      },
-      
-      
-      {
-        antes: 'img/galeria/pedicura_spaantes.jpg',
-        despues: 'img/galeria/pedicura_spadespues.jpg',
-        texto: 'Las uñas de mis pies quedaron muy pulidas y perfectas, una atención impecable.',
-        autor: 'Natalia'
-      },
-      {
-        antes: 'img/galeria/corte_antes.jpg',
-        despues: 'img/galeria/corte_despues.jpg',
-        texto: 'El corte de cabello me quedó genial, justo el estilo moderno que estaba buscando.',
-        autor: 'Alejandra'
-      },
-      {
-        antes: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
-        texto: 'Mi cabello estaba súper maltratado por procesos anteriores y Marcella Beauty Nails lo restauró por completo.',
-        autor: 'Milena'
-      },
-      {
-        antes: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
-        despues: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=80',
-        texto: 'Es un spa súper integral, la atención y todos los servicios son 1A. Súper recomendado.',
-        autor: 'Sandra'
-      }
-    ];
+    /* Los testimonios ahora se leen del HTML (#ad-datos), no de este archivo.
+       Para agregar o cambiar fotos edita las <img> dentro de .ad-item en index.html */
+    const testimonios = Array.from(document.querySelectorAll('#ad-datos .ad-item')).map(function (item) {
+      const imgA = item.querySelector('img.t-antes');
+      const imgD = item.querySelector('img.t-despues');
+      const txt = item.querySelector('.t-texto');
+      const aut = item.querySelector('.t-autor');
+      return {
+        antes: imgA ? imgA.getAttribute('src') : '',
+        despues: imgD ? imgD.getAttribute('src') : '',
+        altAntes: imgA ? imgA.getAttribute('alt') : '',
+        altDespues: imgD ? imgD.getAttribute('alt') : '',
+        texto: txt ? txt.textContent.trim() : '',
+        autor: aut ? aut.textContent.trim() : ''
+      };
+    });
   
     let adIndex = 0;
   
     function renderTestimonio(i) {
+      if (!testimonios.length) return;
       adIndex = (i + testimonios.length) % testimonios.length;
       const t = testimonios[adIndex];
-      if (adAntes) adAntes.src = t.antes;
-      if (adDespues) adDespues.src = t.despues;
+      if (adAntes) { adAntes.src = t.antes; if (t.altAntes) adAntes.alt = t.altAntes; }
+      if (adDespues) { adDespues.src = t.despues; if (t.altDespues) adDespues.alt = t.altDespues; }
       if (adTestimonio) adTestimonio.textContent = '"' + t.texto + '"';
       if (adAutor) adAutor.textContent = '— ' + t.autor;
     }
